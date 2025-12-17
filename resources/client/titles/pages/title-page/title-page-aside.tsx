@@ -72,6 +72,11 @@ export function TitlePageAside({data: {title, language}, className}: Props) {
             <FormattedCurrency value={title.budget} currency="usd" />
           </DetailItem>
         ) : null}
+        {title.certification ?  (
+          <DetailItem label={<Trans message="Certification" />}>
+            <div className="uppercase">{title.certification}</div>
+          </DetailItem>
+        ) : null}
         {title.revenue ? (
           <DetailItem label={<Trans message="Revenue" />}>
             <FormattedCurrency value={title.revenue} currency="usd" />

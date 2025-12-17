@@ -26,9 +26,12 @@ export function TitlePageHeader({title, showPoster = false}: Props) {
         <div>
           <BulletSeparatedItems>
             <FormattedDate date={title.release_date} timezone="utc" />
-            {title.certification && (
+
+          
+            {/* {title.certification && (
               <div className="uppercase">{title.certification}</div>
-            )}
+            )} */}
+
             {title.runtime && (
               <FormattedDuration minutes={title.runtime} verbose />
             )}
