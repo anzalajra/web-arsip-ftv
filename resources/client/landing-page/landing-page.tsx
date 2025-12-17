@@ -319,7 +319,7 @@ function BottomCta({
           alt=""
           width={2347}
           height={1244}
-          quality={80}
+          quality={85}
           className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 blur-sm"
         />
       )}
