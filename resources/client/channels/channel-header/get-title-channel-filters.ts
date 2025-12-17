@@ -129,13 +129,13 @@ export const getTitleChannelFilters = ({
       : null,
     {
       key: 'certification',
-      label: message('Age rating'),
+      label: message('Film Type'),
       defaultOperator: FilterOperator.eq,
       control: {
         type: FilterControlType.Select,
-        placeholder: message('Pick an age rating'),
+        placeholder: message('Pick a film type'),
         showSearchField: true,
-        searchPlaceholder: message('Search for age rating'),
+        searchPlaceholder: message('Search for film type'),
         options: ageRatings.map(({name, value}) => ({
           label: message(name),
           key: value,

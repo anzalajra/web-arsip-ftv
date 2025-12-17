@@ -40,7 +40,6 @@ function CreateTitleForm() {
   const form = useForm<CreateTitlePayload>({
     defaultValues: {
       release_date: now.toAbsoluteString(),
-      certification: 'pg',
       language: 'en',
     },
   });
@@ -238,7 +237,7 @@ function CertificationCombobox() {
     <FormComboBox
       name="certification"
       selectionMode="single"
-      label={<Trans message="Certification" />}
+      label={<Trans message="Film Type" />}
       className="flex-1"
       allowCustomValue
     >
