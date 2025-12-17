@@ -18,6 +18,7 @@ import {SeasonLink} from '@app/seasons/season-link';
 import {EpisodePoster} from '@app/episodes/episode-poster/episode-poster';
 import {EpisodeLink} from '@app/episodes/episode-link';
 import clsx from 'clsx';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props extends Partial<ChartLayoutProps> {
   data?: ReportMetric<TopModelDatasetItem>;
@@ -117,7 +118,7 @@ function Image({model, size, className}: ImageProps) {
     case 'video':
       return model.thumbnail ? (
         <Link to={link} className={clsx(size, className)}>
-          <img src={model.thumbnail} className="h-full w-full" alt="" />
+          <OptimizedImage src={model.thumbnail} width={168} height={168} quality={85} className="h-full w-full" alt="" />
         </Link>
       ) : (
         <TitlePoster

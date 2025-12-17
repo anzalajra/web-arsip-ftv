@@ -7,6 +7,7 @@ import {SeasonLink} from '@app/seasons/season-link';
 import {Title} from '@app/titles/models/title';
 import {Link} from 'react-router';
 import {MovieIcon} from '@ui/icons/material/Movie';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   title: Title;
@@ -37,11 +38,13 @@ export function SeasonPoster({
   );
 
   const image = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
+      width={400}
+      height={600}
+      quality={85}
       alt={trans(
         message('Poster for season :number of :title', {
           values: {number: season.number, title: title.name},

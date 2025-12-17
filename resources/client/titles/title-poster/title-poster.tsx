@@ -10,6 +10,7 @@ import {MediaPlayIcon} from '@ui/icons/media/media-play';
 import {IconButton} from '@ui/buttons/icon-button';
 import {Fragment} from 'react';
 import {MovieIcon} from '@ui/icons/material/Movie';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   title: Title;
@@ -43,12 +44,13 @@ export function TitlePoster({
   );
 
   const image = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
-      decoding="async"
       draggable={false}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
+      width={400}
+      height={600}
+      quality={85}
       alt={trans(message('Poster for :name', {values: {name: title.name}}))}
     />
   ) : (

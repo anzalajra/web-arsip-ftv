@@ -15,6 +15,7 @@ import {Link} from 'react-router';
 import {getWatchLink} from '@app/videos/watch-page/get-watch-link';
 import {MediaPlayIcon} from '@ui/icons/media/media-play';
 import {MovieIcon} from '@ui/icons/material/Movie';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 // can provide either url for backdrop directly or
 // title/episode object if main backdrop for it should be used
@@ -67,14 +68,13 @@ export function TitleBackdrop({
   );
 
   let img = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      decoding="async"
-      sizes={!srcSize ? `100vw` : undefined}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
-      srcSet={!srcSize ? srcset : undefined}
+      width={1280}
+      height={720}
+      quality={85}
       alt={
         item
           ? trans(

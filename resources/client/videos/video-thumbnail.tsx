@@ -8,6 +8,7 @@ import {VideoPlayerSkeleton} from '@app/videos/video-player-skeleton';
 import clsx from 'clsx';
 import {loadYoutubePoster} from '@common/player/providers/youtube/load-youtube-poster';
 import {youtubeIdFromSrc} from '@common/player/utils/youtube-id-from-src';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   video: Video;
@@ -68,10 +69,11 @@ export function VideoThumbnail({
   }
 
   return (
-    <img
-      loading={isLazy ? 'lazy' : undefined}
-      decoding="async"
+    <OptimizedImage
       src={thumbnailUrl}
+      width={640}
+      height={360}
+      quality={85}
       alt=""
       className={clsx(size, 'aspect-video flex-shrink-0 object-cover')}
     />

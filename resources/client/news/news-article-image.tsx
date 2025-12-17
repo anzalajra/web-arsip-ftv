@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {NewsArticle} from '@app/titles/models/news-article';
 import {NewsArticleLink} from '@app/news/news-article-link';
 import {NewspaperIcon} from '@ui/icons/material/Newspaper';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   article: NewsArticle;
@@ -28,11 +29,13 @@ export function NewsArticleImage({
   );
 
   const image = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
+      width={600}
+      height={400}
+      quality={85}
       alt={trans(message('Image for :name', {values: {name: article.title}}))}
     />
   ) : (

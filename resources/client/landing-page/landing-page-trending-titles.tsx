@@ -7,6 +7,7 @@ import {message} from '@ui/i18n/message';
 import {useTrans} from '@ui/i18n/use-trans';
 import clsx from 'clsx';
 import {MovieIcon} from '@ui/icons/material/Movie';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 export function LandingPageTrendingTitles() {
   const titles = getBootstrapData().loaders?.landingPage?.trendingTitles;
@@ -42,11 +43,13 @@ function TitleItem({title}: TitleItemProps) {
   );
 
   const image = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      loading="lazy"
       src={src}
+      width={800}
+      height={450}
+      quality={85}
       alt={trans(message('Poster for :name', {values: {name: title.name}}))}
     />
   ) : (

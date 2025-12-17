@@ -1,2 +1,0 @@
-import{H as a,j as e,t as s,x as g,c as r,p as t,s as i,b as h,r as p,a as n,d as u,e as c}from"./c-f9a45560.js";import"./main-2de135f4.js";a.registerLanguage("javascript",e);a.registerLanguage("typescript",s);a.registerLanguage("html",g);a.registerLanguage("css",r);a.registerLanguage("php",t);a.registerLanguage("shell",i);a.registerLanguage("bash",h);a.registerLanguage("ruby",p);a.registerLanguage("python",n);a.registerLanguage("java",u);a.registerLanguage("c",c);export{a as hljs};
-//# sourceMappingURL=highlight-d745f7a0.js.map
