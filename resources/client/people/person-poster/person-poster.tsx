@@ -5,6 +5,7 @@ import {Person} from '@app/titles/models/person';
 import {PersonLink} from '@app/people/person-link';
 import {ImageSize, useImageSrc} from '@app/images/use-image-src';
 import {PersonIcon} from '@ui/icons/material/Person';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   person: Person;
@@ -34,12 +35,13 @@ export function PersonPoster({
   );
 
   const image = src ? (
-    <img
-      decoding="async"
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
+      width={400}
+      height={600}
+      quality={85}
       alt={trans(
         message('Cover image for :name', {values: {name: person.name}}),
       )}

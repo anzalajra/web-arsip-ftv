@@ -7,6 +7,7 @@ import {message} from '@ui/i18n/message';
 import {ImageSize, useImageSrc} from '@app/images/use-image-src';
 import {ReactNode} from 'react';
 import {useIsMobileMediaQuery} from '@ui/utils/hooks/is-mobile-media-query';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   images: TitleImage[];
@@ -52,9 +53,12 @@ interface ImageProps {
 function ImageItem({image, srcSize = 'md'}: ImageProps) {
   const src = useImageSrc(image.url, {size: srcSize});
   return (
-    <img
+    <OptimizedImage
       className="aspect-square w-full cursor-pointer rounded object-cover"
-      src={src}
+      src={src || image.url}
+      width={400}
+      height={400}
+      quality={85}
       alt=""
     />
   );

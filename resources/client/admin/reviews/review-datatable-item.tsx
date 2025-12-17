@@ -21,6 +21,7 @@ import {StarSelector} from '@app/reviews/review-list/star-selector';
 import {DeleteReviewsButton} from '@app/admin/reviews/delete-reviews-button';
 import {BulletSeparatedItems} from '@app/titles/bullet-separated-items';
 import {Avatar} from '@ui/avatar/avatar';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   review: Review;
@@ -122,9 +123,12 @@ function ReviewableHeader({
         <Checkbox checked={isSelected} onChange={() => onToggle()} />
       </div>
       {reviewable.image && (
-        <img
+        <OptimizedImage
           className="mr-6 h-20 w-20 overflow-hidden rounded object-cover"
           src={reviewable.image}
+          width={80}
+          height={80}
+          quality={85}
           alt=""
         />
       )}

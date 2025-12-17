@@ -16,6 +16,7 @@ import {useProducts} from '@common/billing/pricing-table/use-products';
 import {LandingPageTrendingTitles} from '@app/landing-page/landing-page-trending-titles';
 import {Navbar} from '@common/ui/navigation/navbar/navbar';
 import {MixedImage} from '@ui/images/mixed-image';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface ContentProps {
   content: LandingPageContent;
@@ -67,16 +68,15 @@ function HeroHeader({content}: ContentProps) {
 
   return (
     <header className="relative isolate mb-14 overflow-hidden md:mb-60">
-      <img
+      <OptimizedImage
         src={headerImage}
         style={{
           opacity: headerImageOpacity,
         }}
         alt=""
-        width="2347"
-        height="1244"
-        decoding="async"
-        loading="lazy"
+        width={2347}
+        height={1244}
+        quality={85}
         className={clsx(
           'absolute left-1/2 top-1/2 z-20 max-w-none -translate-x-1/2 -translate-y-1/2',
           blurHeaderImage && 'blur-sm',
@@ -218,8 +218,11 @@ function SecondaryFeatures({content}: ContentProps) {
                 isEven && 'flex-row-reverse',
               )}
             >
-              <img
+              <OptimizedImage
                 src={feature.image}
+                width={580}
+                height={370}
+                quality={85}
                 className="mr-auto aspect-[600/382] w-580 max-w-full rounded-lg shadow-lg dark:border"
                 alt=""
               />
@@ -310,14 +313,13 @@ function BottomCta({
       data-testid="footerImage"
     >
       {footerImage && (
-        <img
+        <OptimizedImage
           draggable={false}
           src={footerImage}
           alt=""
-          width="2347"
-          height="1244"
-          decoding="async"
-          loading="lazy"
+          width={2347}
+          height={1244}
+          quality={80}
           className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 blur-sm"
         />
       )}

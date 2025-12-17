@@ -11,6 +11,7 @@ import {IconButton} from '@ui/buttons/icon-button';
 import {getWatchLink} from '@app/videos/watch-page/get-watch-link';
 import {MediaPlayIcon} from '@ui/icons/media/media-play';
 import {MovieIcon} from '@ui/icons/material/Movie';
+import {OptimizedImage} from '@app/common/components/OptimizedImage';
 
 interface Props {
   title: Title;
@@ -51,11 +52,13 @@ export function EpisodePoster({
   );
 
   let image = src ? (
-    <img
+    <OptimizedImage
       className={imageClassName}
       draggable={false}
-      loading={lazy ? 'lazy' : 'eager'}
       src={src}
+      width={640}
+      height={360}
+      quality={85}
       alt={trans(message('Poster for :name', {values: {name: episode.name}}))}
     />
   ) : (
